@@ -1,0 +1,30 @@
+// NOTE: OK, lets append the new message
+
+var msgContainer = $("#msg-wrapper");
+var msgRow = $("#msg-row-wrapper");
+
+// Empty text box
+$("#body").val("");
+
+// PRINT MESSAGE
+msgContainer.append(`
+  <div id="msg-row-wrapper" class="row m-0 p-0 py-2 chat-row h-100">
+    <div class="col-auto px-3 py-1 rounded bg-secondary chat-bubble ml-auto">
+      <p class="text-justify font-message m-0 p-0 py-1 word-break">
+        <%= @message.body %>
+      </p>
+      <!-- timestamp -->
+      <div class="col-12 p-0 m-0 text-dark msg-timestamp font-xs text-right">
+        <%= time_ago_in_words(@message.created_at) + " " + t("past_time_suffix") %>
+      </div>
+      <!-- end of timestamp -->
+
+      <!-- signature -->
+      <div class="col-12 p-0 m-0 text-dark msg-signature font-sm text-left">
+        <i>- <%= t("own_signature") %></i>
+      </div>
+      <!-- end of signature -->
+
+    </div>
+  </div>
+  `)

@@ -1,0 +1,62 @@
+#big-box {
+
+  .room-list-sm{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    min-height: 10vh;
+    z-index: 10;
+
+  }
+}
+
+#chat-box{
+  height: 100%;
+}
+
+#chat-box-inner{
+  height: 80%!important;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+#chat-box-input{
+  height: 20%;
+  width: 100%;
+
+
+  // KEY ICON HANDLER
+  .key-icon{
+    height: 1em;
+  }
+
+  // TEXT AREA INPUT
+  textarea{
+    resize: none;
+    background-color: transparent;
+  }
+}
+
+.chat-row{
+  height: auto!important;
+}
+
+.chat-bubble{
+  min-width: 25%;
+  max-width: 60%;
+  word-break: break-all;
+}
+
+.msg-timestamp{
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  z-index: 50;
+}
+
+.msg-signature{
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  z-index: 50;
+}

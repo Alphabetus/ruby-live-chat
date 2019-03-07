@@ -1,0 +1,52 @@
+<div id="landing" class="row m-0 p-0 justify-content-center">
+
+  <div class="col-12 col-md-8 m-0 p-0 align-self-center h-50 bg-dark shadow">
+
+    <!-- TEXT ROW  -->
+    <div class="row m-0 p-0 h-100 justify-content-center">
+
+      <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-6 m-0 p-0 px-5 align-self-center text-warning text-center text-uppercase">
+        <div class="row m-0 p-0">
+          <div class="col-12 m-0 p-0">
+            <h5><%= t("login_splash") %></h5>
+          </div>
+        </div>
+
+        <%= form_tag "/login" do %>
+
+          <div class="input-group py-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-secondary text-dark">
+                username
+              </div>
+            </div>
+
+            <%= text_field_tag :username , "" ,class: "form-control bg-dark text-warning", required: "required" %>
+
+          </div>
+
+          <div class="input-group py-3">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-secondary text-dark">
+                password
+              </div>
+            </div>
+
+            <%= password_field_tag :password , "" ,class: "form-control bg-dark text-warning", required: "required" %>
+
+          </div>
+
+          <div class="col-12 m-0 p-0 text-center">
+            <%= submit_tag "enter", class: "btn btn-sm btn-outline-warning" %>
+            <%= link_to "create new account", signup_path, class: "font-sm text-lowercase" %>
+          </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

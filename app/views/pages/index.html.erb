@@ -1,0 +1,28 @@
+<div id="landing" class="row m-0 p-0 justify-content-center">
+
+  <div class="col-12 col-md-8 m-0 p-0 align-self-center h-50 bg-dark shadow">
+
+    <!-- TEXT ROW  -->
+    <div class="row m-0 p-0 h-100">
+
+      <div class="col-12 m-0 p-0 px-5 align-self-center text-warning text-center text-uppercase">
+        <%= t("landing_splash") %><br>
+        <span class="font-sm text-muted">
+          <%= "&copy;#{Time.current.year}&nbsp;|&nbsp;#{t("landing_sign")}".html_safe %>
+        </span>
+      </div>
+
+      <!-- BUTTONS ABSOLUTE ROW  -->
+      <div class="row m-0 p-0 landing-buttons">
+
+        <div class="col-12 m-0 p-0 align-self-center text-center">
+          <%= link_to '<i class="fas fa-play text-muted"></i>&nbsp;&nbsp<span class="font-weight-bold">START</span>'.html_safe, login_path, class: "btn btn-outline-warning"  %>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

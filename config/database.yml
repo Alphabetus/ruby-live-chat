@@ -1,0 +1,40 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  host: 127.0.0.1
+  database: anonChat_default
+  username: postgres
+  password: 'kanuko258'
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  host: 127.0.0.1
+  database: anonChat_dev
+  username: postgres
+  password: 'kanuko258'
+  adapter: postgresql
+  encoding: unicode
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  host: 127.0.0.1
+  database: anonChat_test
+  username: postgres
+  password: 'kanuko258'
+  adapter: postgresql
+  encoding: unicode
+
+production:
+  host: 127.0.0.1
+  database: anonChat_prod
+  username: postgres
+  password: 'kanuko258'
+  adapter: postgresql
+  encoding: unicode

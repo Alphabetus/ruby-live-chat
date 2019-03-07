@@ -1,0 +1,23 @@
+<div class="col-12 m-0 p-0">
+
+  <%= form_tag @url, model: Message, class: "h-100", remote: true do %>
+
+    <div class="input-group h-100">
+
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= hidden_field_tag :chat_id, @room %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= text_area_tag :body, "", class: "form-control text-light", placeholder: "#{t('chat_input_placeholder')}", maxlength: 240 %>
+
+
+      <div class="input-group-append">
+        <button id="text-send-button" class="input-group-text btn btn-outline-warning" type="submit">
+          <%= image_tag "enter.png", class: "key-icon" %>
+        </button>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

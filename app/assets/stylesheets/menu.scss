@@ -1,0 +1,21 @@
+
+#menu{
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+
+  // LINK HANDLING
+  a{
+    color: var(--warning);
+    // FX
+    transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+  }
+  a:hover{
+    text-decoration: none;
+    color: var(--light);
+  }
+
+}

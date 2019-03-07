@@ -1,0 +1,38 @@
+body{
+  background-color: var(--secondary);
+}
+
+
+// GLOBAL LINK HANDLING > PARTICULAR CASES SHOULD BE OVERIDEN
+
+a{
+  color: var(--warning);
+  // FX
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+a:hover{
+  text-decoration: none;
+  color: var(--light);
+}
+
+
+// INFO POPOUTS HANDLER
+.popout-info{
+  position: fixed;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+  font-size: 75%;
+}
+
+
+// BIG FUCKING BOX HANDLER
+#big-box{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+}

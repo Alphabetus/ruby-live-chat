@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ANON CHAT</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <!-- NAVIGATION STUFF  -->
+    <nav id="menu" class="navbar navbar-expand-md navbar-dark bg-dark shadow">
+
+      <a class="navbar-brand text-uppercase" href="/">ANON CHAT</a>
+
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#menu-collapse">
+        <i class="fas fa-bars text-warning"></i>
+      </button>
+
+      <!-- MENU COLLAPSE   -->
+      <div class="collapse navbar-collapse" id="menu-collapse">
+
+        <ul class="navbar-nav ml-auto text-uppercase">
+
+          <li class="nav-item active text-right">
+            <a class="nav-link" href="<%= getRootPath %>"><%= t("menu-start") %></a>
+          </li>
+
+          <!-- MENU > LOGGED OUT ITEMS -->
+          <% if !isLogged? %>
+            <li class="nav-item text-right">
+              <a class="nav-link" href="<%= signup_path %>"><%= t("menu-signup") %></a>
+            </li>
+
+            <li class="nav-item text-right">
+              <a class="nav-link" href="<%= login_path %>"><%= t("menu-login") %></a>
+            </li>
+          <% end %>
+          <!-- END OF MENU > LOGGED OUT ITEMS -->
+
+          <!-- MENU > LOGGED IN ITEMS  -->
+          <% if isLogged? %>
+            <li class="nav-item text-right">
+              <a class="nav-link" href="<%= account_path %>"><%= t("menu-account") %></a>
+            </li>
+
+            <li class="nav-item text-right">
+              <a class="nav-link" href="<%= logout_path %>"><%= t("menu-logout") %></a>
+            </li>
+          <% end %>
+          <!-- END OF MENU > LOGGED IN ITEMS  -->
+
+        </ul>
+
+      </div>
+
+    </nav>
+    <!-- END OF NAVIGATION STUFF  -->
+
+    <!-- ALERTS AREA  -->
+
+    <!-- DANGER  -->
+    <% if flash[:danger] %>
+    <div class="alert alert-danger popout-info px-3 py-1 m-0 p-0" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h5 class="alert-heading font-weight-bold">Error:</h5>
+      <p class="text-md text-justify">
+        <%= flash[:danger].html_safe %>
+      </p>
+    </div>
+    <% end %>
+
+    <!-- success -->
+    <% if flash[:success] %>
+    <div class="alert alert-success popout-info px-3 py-1 m-0 p-0" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h5 class="alert-heading font-weight-bold"><i class="far fa-check-circle"> ok</i></h5>
+      <p class="text-md text-justify">
+        <%= flash[:success].html_safe %>
+      </p>
+    </div>
+    <% end %>
+
+    <!-- END OF ALERTS AREA -->
+
+    <!-- RAILS YELD  -->
+    <div class="container-fluid m-0 p-0 pt-5 mt-5">
+
+      <%= yield %>
+
+    </div>
+    <!-- END OF RAILS YELD -->
+
+
+  </body>
+</html>

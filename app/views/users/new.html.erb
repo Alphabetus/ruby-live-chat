@@ -1,0 +1,71 @@
+<div id="landing" class="row m-0 p-0 justify-content-center">
+
+  <div class="col-12 col-md-8 m-0 p-0 align-self-center h-50 bg-dark shadow">
+
+    <!-- TEXT ROW  -->
+    <div class="row m-0 p-0 h-100 justify-content-center">
+
+      <div class="col-12 col-sm-11 col-md-10 col-lg-8 m-0 p-0 px-5 align-self-center text-warning text-center">
+        <div class="row m-0 p-0">
+          <div class="col-12 m-0 p-0">
+            <h5 class="text-uppercase"><%= t("register_splash") %></h5>
+          </div>
+        </div>
+
+        <%= form_with(model: @user, local: true) do |f| %>
+
+
+        <div class="input-group py-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              username
+            </div>
+          </div>
+
+          <%= f.text_field :username ,class: "form-control bg-dark text-warning", required: "required" %>
+
+        </div>
+
+        <div class="input-group py-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              password
+            </div>
+          </div>
+
+          <%= f.password_field :password, class: "form-control bg-dark text-warning", required: "required" %>
+
+        </div>
+
+        <div class="input-group py-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              confirm password
+            </div>
+          </div>
+
+          <%= f.password_field :password_confirmation, class: "form-control bg-dark text-warning", required: "required" %>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="tos" required>
+          <label class="form-check-label" for="tos">
+            <%= t("agree_tos").html_safe %>
+          </label>
+        </div>
+
+        <div class="col-12 m-0 p-0 text-center pt-3">
+          <%= submit_tag "register", class: "btn btn-sm btn-outline-warning" %>
+          <%= link_to "login into your account", login_path, class: "font-sm text-lowercase" %>
+        </div>
+
+        <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

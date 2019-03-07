@@ -1,0 +1,25 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// LANDING AREA
+#landing{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+
+  // BUTTONS HANDLING
+  .landing-buttons{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    min-height: 3em;
+  }
+
+}

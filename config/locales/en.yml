@@ -1,0 +1,39 @@
+en:
+
+  # REGISTER AREA
+  agree_tos: "I agree with the <a href='/tos' target='_blank'>Terms of Service</a>."
+  register_splash: "Aye! Ready to make an account?"
+
+  # LOGIN AREA
+  login_splash: "Welcome back stranger"
+  account_not_created: "For some reason your account was not created. Please try again."
+  invalid_username: "Username picked does not match the valid format required.<br>Use no spaces or special characters."
+  username_length_error: "Your username must be between 4 and 16 characters."
+  username_taken: "The username you picked is already taken by another user."
+  password_length_error: "Your password must be between 4 and 32 characters."
+  password_do_not_match: "Given passwords do not match."
+  wrong_login_data: "Login details are incorrect.<br>Are you human?"
+  login_welcome: "Welcome back!<br>I think you are somebody that i use to know..."
+
+  #LOGOUT
+  logout_ok: "You've been successfully logged out."
+
+  # MENU STRINGS
+  menu-start: "Start"
+  menu-signup: "Sign Up"
+  menu-login: "Login"
+  menu-logout: "Logout"
+  menu-account: "Settings"
+
+  # LANDING AREA
+  landing_splash: "anon chat"
+  landing_sign: "By&nbsp;&#x2C6D;"
+
+
+  # CHAT AREA
+  view-chat-rooms: "view chat rooms"
+  chat_input_placeholder: "type your message and hit enter / send..."
+  message_is_empty: "Hey!<br>Your message can not be empty..."
+  message_ok: "Message sent"
+  own_signature: "you"
+  past_time_suffix: "ago"
