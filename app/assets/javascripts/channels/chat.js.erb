@@ -11,20 +11,31 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    console.log("asd");
+    if (data.message.chat_id == $("#msg-wrapper").data("chat") && data.message.user_id != $("#msg-wrapper").data("user")){
+      // VISITOR IS IN THE SAME ROOM AS THE DATA WAS SENT LETS DELIVER DOM CHAT MESSAGE
+      $("#msg-wrapper").append(`
+        <div id="msg-row-wrapper" class="row m-0 p-0 py-2 chat-row h-100">
+          <div class="col-auto px-3 py-1 rounded bg-warning chat-bubble mr-auto">
+            <p class="text-justify font-message m-0 p-0 py-1 word-break">
+              ${data.message.body}
+            </p>
+            <!-- timestamp -->
+            <div class="col-12 p-0 m-0 text-dark msg-timestamp font-xs text-right">
+              ${data.timestamp}
+            </div>
+            <!-- end of timestamp -->
 
-  },
-  listen: function(){
-    return this.perform('listen', {
-      chat: $("#msg-wrapper").data("chat")
-    });
+            <!-- signature -->
+            <div class="col-12 p-0 m-0 text-dark msg-signature font-sm text-left">
+              <i>- ${data.user.username}</i>
+            </div>
+            <!-- end of signature -->
+
+          </div>
+        </div>
+        `);
+        // SCROLL IT DOWN
+        $("#chat-box-inner").animate({ scrollTop: $("#chat-box-inner").height() * 10 }, 3000);
+    }
   }
 });
-
-$(document).on("turbolinks:load", function(){
-
-  App.chat.listen()
-  var el = $("#msg-wrapper").data("chat")
-  console.log(el);
-
-})

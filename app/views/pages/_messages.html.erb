@@ -1,10 +1,18 @@
-<div id="msg-wrapper" class="col-12 m-0 p-0 py-1 wrapper" data-chat="<%= params[:chat] || 0 %>">
+<div id="msg-wrapper" class="col-12 m-0 p-0 py-1 wrapper" data-chat="<%= params[:chat] || 0 %>" data-user="<%= session[:user_id] %>">
+  <div id="room-title" class="row m-0 p-0 w-100 rounded">
+    <div class="col-12 m-0 p-0 align-self-center text-secondary p-1 header">
+      <i class="fas fa-terminal"></i><%= @rooms[params[:chat].to_i].downcase %>
+    </div>
+  </div>
+  <!-- END OF ROOM TITLE FIXED -->
+
+  <% if @messages.count > 0 %>
   <% @messages.each do |msg| %>
 
     <!-- MESSAGE ROW  -->
 
       <div id="msg-row-wrapper" class="row m-0 p-0 py-2 chat-row h-100">
-        <% if msg.user.id.to_i == current_user.id.to_i %>
+        <% if msg.user.id.to_i == session[:user_id].to_i %>
           <!-- USER OWN MESSAGE  -->
           <div class="col-auto px-3 py-1 rounded bg-secondary chat-bubble ml-auto">
             <p class="text-justify font-message m-0 p-0 py-1 word-break">
@@ -33,7 +41,7 @@
               <%= msg.body %>
             </p>
             <!-- timestamp -->
-            <div class="col-12 p-0 m-0 text-muted msg-timestamp font-xs text-right">
+            <div class="col-12 p-0 m-0 text-dark msg-timestamp font-xs text-right">
               <%= time_ago_in_words(msg.created_at) %>
             </div>
             <!-- end of timestamp -->
@@ -51,5 +59,6 @@
       </div>
 
     <!-- END OF MESSAGE ROW -->
+  <% end %>
   <% end %>
 </div>

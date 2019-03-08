@@ -1,0 +1,33 @@
+<!-- ROOM LIST OVER SM -->
+<div id="room-list" class="d-none d-sm-block col-sm-5 col-md-4 col-xl-2 m-0 p-0 border-right border-light text-light pl-2 pt-2">
+  <% @rooms.each.with_index do |room, index| %>
+
+    <div class="row w-75 m-0 p-0 py-1 <%= activeRoom(params["chat"].to_i, index) %>">
+      <a href="<%= "/chat/#{index}" %>" class="px-2" target="_self" title="<%= room %>">#<%= room %></a><br>
+    </div>
+
+  <% end %>
+</div>
+
+<!-- ROOM LIST BELOW SM  -->
+<div class="m-0 p-0 wrapper position-relative">
+
+  <div id="room-list" class="d-block d-sm-none room-list-sm">
+    <div id="room-list-collapse" class="collapse bg-dark text-light text-right font-md border-bottom border-light">
+      <div class="row m-0 p-0 py-1 justify-content-end">
+        <% @rooms.each.with_index do |room, index| %>
+          <div class="col-auto d-inline m-0 p-0">
+            <a href="<%= "/chat/#{index}" %>" class="px-2" target="_self" title="<%= room %>">#<%= room %></a><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <nav class="navbar navbar">
+      <button class="navbar-toggler border-0 p-0 m-0 ml-auto p-0" type="button" data-toggle="collapse" data-target="#room-list-collapse">
+        <span class="font-sm text-muted bg-dark"><%= t("view-chat-rooms") %></span>
+      </button>
+    </nav>
+  </div>
+
+</div>

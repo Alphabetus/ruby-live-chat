@@ -68,7 +68,10 @@ class UsersController < ApplicationController
       if errors.any? == false
         # NO ERRORS >> SAVE USER
         if @user.save
-          format.html { redirect_to chat_path, notice: 'User was successfully created.' }
+          format.html do
+            flash[:success] = t("account_created")
+            redirect_to login_path
+          end
           format.json { render :show, status: :created, location: @user }
         else
           format.html do

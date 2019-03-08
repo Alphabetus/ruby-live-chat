@@ -2,38 +2,16 @@
 
 <div id="big-box" class="row m-0 p-0 bg-dark">
 
-  <!-- ROOM LIST OVER SM -->
-  <div id="room-list" class="d-none d-sm-block col-sm-5 col-md-4 col-xl-2 m-0 p-0 border-right border-light text-light">
-    <% @rooms.each.with_index do |room, index| %>
-
-      <a href="<%= "/chat/#{index}" %>" target="_self" title="<%= room %>"><%= room %></a><br>
-
-    <% end %>
-  </div>
-
-  <!-- ROOM LIST BELOW SM  -->
-  <div class="m-0 p-0 wrapper position-relative">
-
-    <div id="room-list" class="d-block d-sm-none room-list-sm">
-      <div id="room-list-collapse" class="collapse bg-dark text-light text-right font-md">
-        <span class="pr-3">[rooms]</span>
-      </div>
-
-      <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler border-0 p-0 m-0 ml-auto p-0" type="button" data-toggle="collapse" data-target="#room-list-collapse">
-          <span class="font-sm"><%= t("view-chat-rooms") %></span>
-        </button>
-      </nav>
-    </div>
-
-  </div>
+  <%= render "room_list" %>
 
 
   <div id="chat-box" class="col-12 col-sm-7 col-md-8 col-xl-10 m-0 p-2 bg-dark pt-5 pt-sm-0">
 
     <div id="chat-box-inner" class="row m-0 p-2 border border-light">
 
-      <%= render "messages" %>
+      <!-- ROOM TITLE FIXED -->
+
+        <%= render "messages" %>
 
     </div>
 

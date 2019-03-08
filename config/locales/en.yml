@@ -3,6 +3,7 @@ en:
   # REGISTER AREA
   agree_tos: "I agree with the <a href='/tos' target='_blank'>Terms of Service</a>."
   register_splash: "Aye! Ready to make an account?"
+  account_created: "Welcome!<br>Your account was created.<br>You may now login with your credentials."
 
   # LOGIN AREA
   login_splash: "Welcome back stranger"
@@ -32,8 +33,9 @@ en:
 
   # CHAT AREA
   view-chat-rooms: "view chat rooms"
-  chat_input_placeholder: "type your message and hit enter / send..."
+  chat_input_placeholder: "send your message to"
   message_is_empty: "Hey!<br>Your message can not be empty..."
   message_ok: "Message sent"
   own_signature: "you"
   past_time_suffix: "ago"
+  just_now: "just now"

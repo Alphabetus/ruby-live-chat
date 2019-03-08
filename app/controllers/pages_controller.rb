@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
     # chatroom list
     @rooms = [
-      "global",
+      "Global",
       "WebDev",
       "UxDesign",
       "UiDesign",
@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     else
       @room = 0
     end
-    @messages = Message.where(chat_id: @room).order(created_at: :desc).limit(50).reverse
+    @messages = Message.where(chat_id: @room).order(created_at: :desc).limit(15).reverse
     @url = "/chat/#{@room}"
 
 

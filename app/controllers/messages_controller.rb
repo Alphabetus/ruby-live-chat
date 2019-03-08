@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
 
         if @message.save
           # socket broadcast
-          ChatChannel.broadcast_to @message.chat_id, message: @message
+          ChatChannel.broadcast_to "channel", message: @message, user: @message.user, timestamp: t("just_now")
 
           format.html do
             flash[:success] = t("message_ok")

@@ -4,11 +4,9 @@
 
     <div class="input-group h-100">
 
-      <%= hidden_field_tag :user_id, current_user.id %>
-      <%= hidden_field_tag :user_id, current_user.id %>
       <%= hidden_field_tag :chat_id, @room %>
-      <%= hidden_field_tag :user_id, current_user.id %>
-      <%= text_area_tag :body, "", class: "form-control text-light", placeholder: "#{t('chat_input_placeholder')}", maxlength: 240 %>
+      <%= hidden_field_tag :user_id, session[:user_id] %>
+      <%= text_area_tag :body, "", class: "form-control text-light", placeholder: "#{t('chat_input_placeholder')} ##{@rooms[@room.to_i].downcase}...", maxlength: 240 %>
 
 
       <div class="input-group-append">
