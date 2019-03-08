@@ -1,1 +1,78 @@
-[settings]
+<% authorize %>
+<div id="settings" class="row m-0 p-0 bg-dark">
+  <div class="col-12 m-0 p-0 wrapper">
+
+    <!-- TITLE ROW -->
+    <div class="row m-0 p-0 border-bottom border-warning">
+      <div class="col-12 m-0 px-3">
+        <h2 class="text-warning"><i class="fas fa-users-cog"></i>&nbsp;<%= t('settings_title') %></h2>
+      </div>
+    </div>
+    <!-- END OF TITLE ROW -->
+
+    <!-- OPTIONS TAB ROW  -->
+    <div class="row m-0 p-0">
+
+
+      <!-- TAB TITLEs -->
+      <div class="col-4 m-0 p-0">
+        <div class="nav flex-column nav-tabs border-0" id="canais-local" role="tablist">
+            <a class="nav-link ml-1 list-tab-button text-warning active" data-toggle="pill" role="tab" href="#tab-profile"><%= t("settings_profile") %></a>
+            <a class="nav-link ml-1 list-tab-button text-warning" data-toggle="pill" role="tab" href="#tab-password"><%= t("settings_password") %></a>
+            <a class="nav-link ml-1 list-tab-button text-danger" data-toggle="pill" role="tab" href="#tab-delete"><%= t("settings_delete") %></a>
+        </div>
+      </div>
+      <!-- END OF TAB TITLES  -->
+
+      <!-- TAB CONTENT -->
+      <div class="col-8 m-0 p-0">
+        <div class="tab-content px-5 pb-5">
+
+          <!-- TAB # 1 -->
+          <div class="tab-pane fade show text-center active" id="tab-profile" role="tabpanel">
+
+            <h3 class="text-center text-warning font-italic font-weight-bold"><%= t("settings_profile") %></h3>
+            <div class="row m-0 p-0 justify-content-center pb-5">
+                <div class="col-1 border-top border-warning"></div>
+            </div>
+
+            <span class="font-sm text-light">[form]</span> <br>
+
+          </div>
+          <!-- END OF TAB # 1 -->
+
+          <!-- TAB # 2 -->
+          <div class="tab-pane fade show text-center" id="tab-password" role="tabpanel">
+
+            <h3 class="text-center text-warning font-italic font-weight-bold"><%= t("settings_password") %></h3>
+            <div class="row m-0 p-0 justify-content-center pb-5">
+                <div class="col-1 border-top border-warning"></div>
+            </div>
+
+            <span class="font-sm text-light">[form]</span> <br>
+
+          </div>
+          <!-- END OF TAB # 2 -->
+
+          <!-- TAB # 3 -->
+          <div class="tab-pane fade show text-center" id="tab-delete" role="tabpanel">
+
+            <h3 class="text-center text-danger font-italic font-weight-bold"><%= t("settings_delete") %></h3>
+            <div class="row m-0 p-0 justify-content-center pb-5">
+                <div class="col-1 border-top border-warning"></div>
+            </div>
+
+            <span class="font-sm text-light">[form]</span> <br>
+
+          </div>
+          <!-- END OF TAB # 3 -->
+
+        </div>
+      </div>
+      <!-- END OF TAB CONTENT -->
+
+    </div>
+    <!-- END OF OPTIONS TAB ROW  -->
+
+  </div>
+</div>

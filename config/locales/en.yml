@@ -39,3 +39,10 @@ en:
   own_signature: "you"
   past_time_suffix: "ago"
   just_now: "just now"
+
+
+  # ACCOUNT AREA
+  settings_title: "User Preferences"
+  settings_profile: "User settings"
+  settings_password: "Security settings"
+  settings_delete: "Delete account"

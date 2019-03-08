@@ -1,0 +1,26 @@
+#settings{
+  padding-top: 11vh!important;
+  margin-top: -10vh!important;
+  min-height: 94vh;
+
+
+  // TAB STYLE HANDLING
+  // NAV TAB BUTTON HANDLE
+  .nav-link{
+    border:0;
+    color: var(--primary);
+  }
+  .nav-link.active{
+    // border: 1px solid var(--primary)!important;
+    border-top: 2px solid var(--warning);
+    border-bottom: 2px solid var(--warning);
+    border-right: 2px solid var(--warning);
+    color: var(--primary);
+    background-color: var(--dark);
+    border-radius: 0 0 0.27em 0!important;
+  }
+  .nav-link.active::after{
+    content: " <";
+    font-weight: bold;
+  }
+}
