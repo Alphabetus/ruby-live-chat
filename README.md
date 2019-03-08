@@ -16,4 +16,7 @@
 
 
 ## Changelog
-(here)
+https://github.com/Alphabetus/ruby-live-chat/tree/master/CHANGELOG
+
+## Live Demo
+https://chat.alphawebmaker.com/ 
