@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   # routing
   get "/account" => "pages#account"
+  post "/account" => "users#update"
+  post "/account/password" => "users#update_password"
+  post "/account/delete" => "users#destroy"
 
   get "/chat" => "pages#chat"
   get "/chat/:chat" => "pages#chat"

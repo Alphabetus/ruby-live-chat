@@ -1,0 +1,46 @@
+<div class="tab-pane fade show text-center active" id="tab-profile" role="tabpanel">
+
+  <h3 class="text-center text-warning font-italic font-weight-bold"><%= t("settings_profile") %></h3>
+  <div class="row m-0 p-0 justify-content-center pb-3">
+      <div class="col-1 border-top border-warning"></div>
+      <div class="col-12 m-0 p-0 text-center text-muted font-sm pt-3">
+        <%= t("settings_profile_description") %>
+      </div>
+  </div>
+
+  <!-- FORM ROW -->
+  <div class="row m-0 p-0 justify-content-center">
+    <div class="col-12 m-0 p-0">
+
+      <%= form_with(model: User, method: "post", url: account_path) do |f| %>
+
+        <!-- username -->
+        <div class="input-group py-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              username
+            </div>
+          </div>
+          <%= f.text_field :username ,class: "form-control bg-dark text-warning", required: "required", value: current_user.username %>
+        </div>
+
+        <!-- password confirmation -->
+        <div class="input-group py-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              current password:
+            </div>
+          </div>
+          <%= f.password_field :password, class: "form-control bg-dark text-warning", required: "required", placeholder: t("placeholder_current_pass") %>
+        </div>
+
+        <!-- submit -->
+        <%= f.submit t("save_settings_button"), class: "btn btn-sm btn-outline-success mt-3" %>
+
+      <% end %>
+
+    </div>
+  </div>
+
+
+</div>

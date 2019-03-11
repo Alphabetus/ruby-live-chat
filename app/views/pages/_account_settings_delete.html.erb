@@ -1,0 +1,57 @@
+<div class="tab-pane fade show text-center" id="tab-delete" role="tabpanel">
+
+  <h3 class="text-center text-danger font-italic font-weight-bold"><%= t("settings_delete") %></h3>
+  <div class="row m-0 p-0 justify-content-center pb-3">
+      <div class="col-1 border-top border-warning"></div>
+      <div class="col-12 m-0 p-0 text-center text-muted font-sm pt-3">
+        <%= t("settings_delete_description") %>
+      </div>
+  </div>
+
+  <div class="row m-0 p-0 justify-content-center pb-3">
+      <div class="col-12 m-0 p-0 text-center text-danger font-sm pt-3">
+        <%= t("delete_account_disclaimer") %>
+      </div>
+  </div>
+
+  <!-- FORM ROW -->
+  <div class="row m-0 p-0 justify-content-center">
+    <div class="col-12 m-0 p-0">
+
+      <%= form_with(model: User, method: "post", url: account_delete_path) do |f| %>
+
+        <!-- Message deletion disclaimer  -->
+        <div class="form-check pb-3">
+          <input class="form-check-input" type="checkbox" value="" id="delete_confirm_messages" required>
+          <label class="form-check-label text-light text-left font-sm" for="delete_confirm_messages">
+            <%= t("agree_messages_wipe").html_safe %>
+          </label>
+        </div>
+
+        <!-- Just make sure confirmation check  -->
+        <div class="form-check pb-3">
+          <input class="form-check-input" type="checkbox" value="" id="delete_confirm" required>
+          <label class="form-check-label text-light text-left font-sm" for="delete_confirm">
+            <%= t("agree_delete_account").html_safe %>
+          </label>
+        </div>
+
+        <!-- current password -->
+        <div class="input-group pb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text bg-secondary text-dark">
+              current password:
+            </div>
+          </div>
+          <%= f.password_field :password, class: "form-control bg-dark text-warning", required: "required", placeholder: t("placeholder_current_pass") %>
+        </div>
+
+        <!-- SUBMIT -->
+        <%= f.submit t("delete_account_button"), class: "btn btn-sm btn-outline-danger mt-3" %>
+
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
