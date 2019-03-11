@@ -4,6 +4,7 @@
 
 ## Features
 
+- Account settings.
 - Simple secure and anonymous registration system.
 - Different chatrooms.
 - Live updates with ajax and `ActionCable` (websockets).
@@ -11,7 +12,7 @@
 
 ## Planned features
 
-- Account settings.
+
 - Admin moderation.
 
 
@@ -19,4 +20,4 @@
 https://github.com/Alphabetus/ruby-live-chat/tree/master/CHANGELOG
 
 ## Live Demo
-https://chat.alphawebmaker.com/ 
+https://chat.alphawebmaker.com/
